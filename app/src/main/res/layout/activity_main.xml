@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="16dp"
+    android:paddingTop="50dp"
+    android:clipToPadding="false"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textViewChooseList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wähle eine Vokabelliste:"
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Ersetzt die Buttons durch einen Spinner -->
+    <Spinner
+        android:id="@+id/listSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:minHeight="48dp"/>  <!-- Wichtig für Barrierefreiheit und Touch-Ziele -->
+
+    <!-- Das currentListTextView ist jetzt optional, da der Spinner die Auswahl anzeigt,
+         aber du kannst es für Debugging oder zusätzliche Info behalten -->
+    <TextView
+        android:id="@+id/currentListTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aktuelle Liste: "
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"/> <!-- Optional: Kann ausgeblendet werden -->
+
+    <TextView
+        android:id="@+id/wordToTranslateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lade Wort..."
+        android:textSize="24sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/translationEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Übersetzung eingeben"
+        android:inputType="text"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/checkButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prüfen"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>
