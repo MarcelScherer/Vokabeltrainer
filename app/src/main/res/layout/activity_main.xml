@@ -20,25 +20,52 @@
         android:textSize="18sp"
         android:layout_marginBottom="0dp"/>
 
-    <!-- Ersetzt die Buttons durch einen Spinner -->
     <Spinner
         android:id="@+id/listSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="30dp"
         android:minHeight="60dp" />
-    <!-- Wichtig für Barrierefreiheit und Touch-Ziele -->
 
-    <!-- Das currentListTextView ist jetzt optional, da der Spinner die Auswahl anzeigt,
-         aber du kannst es für Debugging oder zusätzliche Info behalten -->
+    <!-- NEU: RadioGroup für die Übersetzungsrichtung -->
     <TextView
-        android:id="@+id/currentListTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Aktuelle Liste: "
-        android:textSize="16sp"
-        android:layout_marginBottom="30dp"
-        android:visibility="gone"/> <!-- Optional: Kann ausgeblendet werden -->
+        android:text="Übersetzungsrichtung:"
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp"/>
+
+    <RadioGroup
+        android:id="@+id/directionRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp">
+
+        <RadioButton
+            android:id="@+id/radioMixed"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Gemischt"
+            android:checked="true" /> <!-- Standardauswahl -->
+
+        <RadioButton
+            android:id="@+id/radioGermanToEnglish"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="DE → EN" />
+
+        <RadioButton
+            android:id="@+id/radioEnglishToGerman"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="EN → DE" />
+    </RadioGroup>
+
+    <!-- ... Rest deiner Layout-Datei ... -->
 
     <TextView
         android:id="@+id/wordToTranslateTextView"
