@@ -113,6 +113,9 @@ object VocabularyData {
         VocabularyEntry(germanWords = listOf("von"), englishWords = listOf("of")),
         VocabularyEntry(germanWords = listOf("grüßen", "Grüße ausrichten"), englishWords = listOf("to say hello")),
         VocabularyEntry(germanWords = listOf("zu", "nach", "auf", "in"), englishWords = listOf("to")),
+    )
+
+    val adjectives = listOf(
         VocabularyEntry(germanWords = listOf("nett"), englishWords = listOf("nice")),
         VocabularyEntry(germanWords = listOf("cool"), englishWords = listOf("cool")),
         VocabularyEntry(germanWords = listOf("großartig"), englishWords = listOf("great")),
@@ -146,13 +149,36 @@ object VocabularyData {
         VocabularyEntry(germanWords = listOf("freundlich"), englishWords = listOf("friendly")),
     )
 
-    val combinedList = listOne + Unit1_check_in + Unit1_this_is_my_family + Unit1_whats_the_problem
+    val this_is_my_room = listOf(
+        VocabularyEntry(germanWords = listOf("Problem", "Schwierigkeit"), englishWords = listOf("problem")),
+         VocabularyEntry(germanWords = listOf("das ist/sind", "es gibt"), englishWords = listOf("there is/are")),
+        VocabularyEntry(germanWords = listOf("da", "dort", "dahin", "dorthin"), englishWords = listOf("there")),
+        VocabularyEntry(germanWords = listOf("Garten"), englishWords = listOf("garden")),
+        VocabularyEntry(germanWords = listOf("hinter"), englishWords = listOf("behind")),
+        VocabularyEntry(germanWords = listOf("Herr (Anrede)"), englishWords = listOf("Mr")),
+        VocabularyEntry(germanWords = listOf("Frau (Anrede)"), englishWords = listOf("Mrs")),
+        VocabularyEntry(germanWords = listOf("jetzt", "nun"), englishWords = listOf("now")),
+        VocabularyEntry(germanWords = listOf("Auto"), englishWords = listOf("car")),
+        VocabularyEntry(germanWords = listOf("überall", "überallhin"), englishWords = listOf("everywhere")),
+        VocabularyEntry(germanWords = listOf("wieder", "noch einmal", "noch mal"), englishWords = listOf("again")),
+        VocabularyEntry(germanWords = listOf("Fußboden"), englishWords = listOf("floor")),
+        VocabularyEntry(germanWords = listOf("neben"), englishWords = listOf("next to")),
+        VocabularyEntry(germanWords = listOf("vor"), englishWords = listOf("in front of")),
+        VocabularyEntry(germanWords = listOf("zuhören", "anhören"), englishWords = listOf("listen (to)")),
+        VocabularyEntry(germanWords = listOf("Idee", "Einfall"), englishWords = listOf("idea")),
+        VocabularyEntry(germanWords = listOf("Dachboden"), englishWords = listOf("loft")),
+        VocabularyEntry(germanWords = listOf("eigene/r/s"), englishWords = listOf("own")),
+    )
+    val combinedList = listOne + Unit1_check_in + Unit1_this_is_my_family + Unit1_whats_the_problem +
+                       adjectives + this_is_my_room
 
     val allLists: Map<String, List<VocabularyEntry>> = mapOf(
-        "Wiederholung (alle Vokabeln)" to listOne,
+        "Wiederholung (alle Vokabeln)" to combinedList,
         "Unit 1 - check in " to Unit1_check_in,
         "Unit 1 - this is my family " to Unit1_this_is_my_family,
-        "Unit 1 - what's the problem? " to Unit1_whats_the_problem
+        "Unit 1 - what's the problem? " to Unit1_whats_the_problem,
+        "Adjectives" to adjectives,
+        "This is my Room" to this_is_my_room,
         // Füge hier weitere Listen hinzu, z.B. "Liste 3: Verben" to listThree
     )
 
