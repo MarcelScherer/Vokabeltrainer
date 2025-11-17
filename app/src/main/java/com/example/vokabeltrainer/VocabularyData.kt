@@ -7,7 +7,7 @@ data class VocabularyEntry(
 )
 
 object VocabularyData {
-    val listOne = listOf(
+    val unit_1 = listOf(
         VocabularyEntry(germanWords = listOf("Hund", ), englishWords = listOf("dog")),
         VocabularyEntry(germanWords = listOf("Maus"), englishWords = listOf("mice")),
         VocabularyEntry(germanWords = listOf("Ball"), englishWords = listOf("ball")),
@@ -46,10 +46,6 @@ object VocabularyData {
         VocabularyEntry(germanWords = listOf("zehn", "10"), englishWords = listOf("ten")),
         VocabularyEntry(germanWords = listOf("elf", "11"), englishWords = listOf("eleven")),
         VocabularyEntry(germanWords = listOf("zwölf", "12"), englishWords = listOf("twelve")),
-        // Füge hier bei Bedarf weitere Einträge hinzu
-    )
-
-    val Unit1_check_in = listOf(
         VocabularyEntry(germanWords = listOf("zu Hause"), englishWords = listOf("at home")),
         VocabularyEntry(germanWords = listOf("Familie"), englishWords = listOf("family")),
         VocabularyEntry(germanWords = listOf("wohnen", "leben"), englishWords = listOf("to live")),
@@ -79,9 +75,6 @@ object VocabularyData {
         VocabularyEntry(germanWords = listOf("sammeln"), englishWords = listOf("collect")),
         VocabularyEntry(germanWords = listOf("neu"), englishWords = listOf("new")),
         VocabularyEntry(germanWords = listOf("klein"), englishWords = listOf("small")),
-    )
-
-    val Unit1_this_is_my_family = listOf(
         VocabularyEntry(germanWords = listOf("Schwester"), englishWords = listOf("sister")),
         VocabularyEntry(germanWords = listOf("Bruder"), englishWords = listOf("brother")),
         VocabularyEntry(germanWords = listOf("Vater"), englishWords = listOf("father")),
@@ -113,9 +106,6 @@ object VocabularyData {
         VocabularyEntry(germanWords = listOf("von"), englishWords = listOf("of")),
         VocabularyEntry(germanWords = listOf("grüßen", "Grüße ausrichten"), englishWords = listOf("to say hello")),
         VocabularyEntry(germanWords = listOf("zu", "nach", "auf", "in"), englishWords = listOf("to")),
-    )
-
-    val adjectives = listOf(
         VocabularyEntry(germanWords = listOf("nett"), englishWords = listOf("nice")),
         VocabularyEntry(germanWords = listOf("cool"), englishWords = listOf("cool")),
         VocabularyEntry(germanWords = listOf("großartig"), englishWords = listOf("great")),
@@ -129,10 +119,7 @@ object VocabularyData {
         VocabularyEntry(germanWords = listOf("schlau"), englishWords = listOf("clever")),
         VocabularyEntry(germanWords = listOf("albern", "dumm"), englishWords = listOf("silly")),
         VocabularyEntry(germanWords = listOf("laut"), englishWords = listOf("noisy")),
-        VocabularyEntry(germanWords = listOf("klein"), englishWords = listOf("short"))
-    )
-
-    val Unit1_whats_the_problem = listOf(
+        VocabularyEntry(germanWords = listOf("klein"), englishWords = listOf("short")),
         VocabularyEntry(germanWords = listOf("Problem", "Schwierigkeit"), englishWords = listOf("problem")),
         VocabularyEntry(germanWords = listOf("da ist/sind", "es gibt"), englishWords = listOf("there is/are")),
         VocabularyEntry(germanWords = listOf("da", "dort", "dahin", "dorthin"), englishWords = listOf("there")),
@@ -168,17 +155,65 @@ object VocabularyData {
         VocabularyEntry(germanWords = listOf("Idee", "Einfall"), englishWords = listOf("idea")),
         VocabularyEntry(germanWords = listOf("Dachboden"), englishWords = listOf("loft")),
         VocabularyEntry(germanWords = listOf("eigene/r/s"), englishWords = listOf("own")),
+        VocabularyEntry(germanWords = listOf("Kleiderschrank"), englishWords = listOf("wardrobe")),
+        VocabularyEntry(germanWords = listOf("Bett"), englishWords = listOf("bed")),
+        VocabularyEntry(germanWords = listOf("Tisch"), englishWords = listOf("table")),
+        VocabularyEntry(germanWords = listOf("Stuhl"), englishWords = listOf("chair")),
+        VocabularyEntry(germanWords = listOf("Lampe"), englishWords = listOf("lamp")),
+        VocabularyEntry(germanWords = listOf("Spiegel"), englishWords = listOf("mirror")),
+        VocabularyEntry(germanWords = listOf("Regal", "Regale"), englishWords = listOf("shelf", "shelves")),
+        VocabularyEntry(germanWords = listOf("Teppich", "Vorleger"), englishWords = listOf("rug")),
+        VocabularyEntry(germanWords = listOf("Gitarre"), englishWords = listOf("guitar")),
+        VocabularyEntry(germanWords = listOf("Skateboard"), englishWords = listOf("skateboard")),
+        VocabularyEntry(germanWords = listOf("Poster"), englishWords = listOf("poster")),
+        VocabularyEntry(germanWords = listOf("Spielzeug"), englishWords = listOf("toy")),
+        VocabularyEntry(germanWords = listOf("Stofftier", "Stofftierchen"), englishWords = listOf("cuddly toy")),
+        VocabularyEntry(germanWords = listOf("Computer"), englishWords = listOf("computer")),
     )
-    val combinedList = listOne + Unit1_check_in + Unit1_this_is_my_family + Unit1_whats_the_problem +
-                       adjectives + this_is_my_room
+
+    val where_is_mir_fluff = listOf(
+        VocabularyEntry(germanWords = listOf("belebt", "beschäftigt"), englishWords = listOf("busy")),
+        VocabularyEntry(germanWords = listOf("für", "wen", "?"), englishWords = listOf("who... for?")),
+        VocabularyEntry(germanWords = listOf("auf Entdeckungsreise gehen", "erkunden", "erforschen"), englishWords = listOf("to explore")),
+        VocabularyEntry(germanWords = listOf("beste/r/s"), englishWords = listOf("best")),
+        VocabularyEntry(germanWords = listOf("Tasche", "Tüte"), englishWords = listOf("bag")),
+        VocabularyEntry(germanWords = listOf("vielleicht"), englishWords = listOf("maybe")),
+        VocabularyEntry(germanWords = listOf("nach (zeitlich)"), englishWords = listOf("after")),
+        VocabularyEntry(germanWords = listOf("Besuch"), englishWords = listOf("visit")),
+        VocabularyEntry(germanWords = listOf("nach draußen", "draußen", "außerhalb (von)"), englishWords = listOf("outside")),
+        VocabularyEntry(germanWords = listOf("schrecklich", "furchtbar"), englishWords = listOf("awful")),
+        VocabularyEntry(germanWords = listOf("Keine Sorge"), englishWords = listOf("Don't worry")),
+        VocabularyEntry(germanWords = listOf("Satz"), englishWords = listOf("sentence")),
+        VocabularyEntry(germanWords = listOf("richtig", "korrekt"), englishWords = listOf("right")),
+        VocabularyEntry(germanWords = listOf("Ende", "Schluss (Geschichte)"), englishWords = listOf("ending")),
+        VocabularyEntry(germanWords = listOf("über etw. sprechen", "über etw. erzählen"), englishWords = listOf("to talk about")),
+        VocabularyEntry(germanWords = listOf("Problem", "Schwierigkeit"), englishWords = listOf("problem")),
+        VocabularyEntry(germanWords = listOf("das ist", "sind", "es gibt"), englishWords = listOf("there is", "there are")),
+        VocabularyEntry(germanWords = listOf("da", "dort", "dahin", "dorthin"), englishWords = listOf("there")),
+        VocabularyEntry(germanWords = listOf("Garten"), englishWords = listOf("garden")),
+        VocabularyEntry(germanWords = listOf("hinter"), englishWords = listOf("behind")),
+        VocabularyEntry(germanWords = listOf("Herr", "Anrede"), englishWords = listOf("Mr")),
+        VocabularyEntry(germanWords = listOf("Frau", "Anrede"), englishWords = listOf("Mrs")),
+        VocabularyEntry(germanWords = listOf("jetzt", "nun"), englishWords = listOf("now")),
+        VocabularyEntry(germanWords = listOf("Auto"), englishWords = listOf("car")),
+        VocabularyEntry(germanWords = listOf("überall", "überallhin"), englishWords = listOf("everywhere")),
+        VocabularyEntry(germanWords = listOf("wieder", "noch einmal", "noch mal"), englishWords = listOf("again")),
+        VocabularyEntry(germanWords = listOf("Fußboden"), englishWords = listOf("floor")),
+        VocabularyEntry(germanWords = listOf("neben"), englishWords = listOf("next to")),
+        VocabularyEntry(germanWords = listOf("vor"), englishWords = listOf("in front of")),
+        VocabularyEntry(germanWords = listOf("zuhören", "anhören"), englishWords = listOf("listen", "listen to")),
+        VocabularyEntry(germanWords = listOf("Idee", "Einfall"), englishWords = listOf("idea")),
+        VocabularyEntry(germanWords = listOf("Dachboden"), englishWords = listOf("loft")),
+        VocabularyEntry(germanWords = listOf("eigen"), englishWords = listOf("own")),
+    )
+    val combinedList = unit_1 + this_is_my_room +where_is_mir_fluff
 
     val allLists: Map<String, List<VocabularyEntry>> = mapOf(
         "Wiederholung (alle Vokabeln)" to combinedList,
-        "Unit 1 - check in " to Unit1_check_in,
-        "Unit 1 - this is my family " to Unit1_this_is_my_family,
-        "Unit 1 - what's the problem? " to Unit1_whats_the_problem,
-        "Adjectives" to adjectives,
+        "Unit 1 - call " to unit_1,
         "This is my Room" to this_is_my_room,
+        "Where is Mir fluff?" to where_is_mir_fluff,
+        // Füge hier weitere Listen hinzu"
         // Füge hier weitere Listen hinzu, z.B. "Liste 3: Verben" to listThree
     )
 
