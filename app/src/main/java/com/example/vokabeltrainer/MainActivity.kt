@@ -1,6 +1,8 @@
 package com.example.vokabeltrainer
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -18,11 +20,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var wordToTranslateTextView: TextView
     private lateinit var translationEditText: EditText
     private lateinit var checkButton: Button
+    private lateinit var solutionButton: Button // NEU: Variable für den Lösungs-Button
     private lateinit var resultTextView: TextView
-    private lateinit var directionRadioGroup: RadioGroup // NEU: Variable für die RadioGroup
+    private lateinit var directionRadioGroup: RadioGroup
 
     private var currentVocabularyEntry: VocabularyEntry? = null
-    // 'isGermanToEnglish' wird jetzt in loadNewWord() gesetzt, nicht mehr hier
     private var isGermanToEnglish: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,12 +36,12 @@ class MainActivity : AppCompatActivity() {
         wordToTranslateTextView = findViewById(R.id.wordToTranslateTextView)
         translationEditText = findViewById(R.id.translationEditText)
         checkButton = findViewById(R.id.checkButton)
+        solutionButton = findViewById(R.id.solutionButton) // NEU: Lösungs-Button initialisieren
         resultTextView = findViewById(R.id.resultTextView)
-        directionRadioGroup = findViewById(R.id.directionRadioGroup) // NEU
+        directionRadioGroup = findViewById(R.id.directionRadioGroup)
 
         setupSpinner()
 
-        // NEU: Listener für die RadioGroup, um beim Wechsel der Richtung sofort ein neues Wort zu laden
         directionRadioGroup.setOnCheckedChangeListener { _, _ ->
             loadNewWord()
         }
@@ -47,12 +49,23 @@ class MainActivity : AppCompatActivity() {
         checkButton.setOnClickListener {
             checkTranslation()
         }
+
+        // NEU: Click-Listener für den Lösungs-Button
+        solutionButton.setOnClickListener {
+            showSolution()
+        }
     }
 
     private fun setupSpinner() {
-        // ... (deine bestehende setupSpinner Methode bleibt unverändert)
         val listNames = VocabularyData.allLists.keys.toList()
-        if (listNames.isEmpty()) { /* ... */ return }
+        if (listNames.isEmpty()) {
+            // UI für leeren Zustand deaktivieren
+            listSpinner.isEnabled = false
+            checkButton.isEnabled = false
+            solutionButton.isEnabled = false // NEU: Auch Lösungs-Button deaktivieren
+            translationEditText.isEnabled = false
+            return
+        }
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, listNames)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         listSpinner.adapter = adapter
@@ -72,8 +85,8 @@ class MainActivity : AppCompatActivity() {
             if (initialPosition >= 0) listSpinner.setSelection(initialPosition)
         } ?: if (listNames.isNotEmpty()) {
             listSpinner.setSelection(0)
-        } else {
-
+        }else{
+            listSpinner.isEnabled = false
         }
     }
 
@@ -84,11 +97,11 @@ class MainActivity : AppCompatActivity() {
             wordToTranslateTextView.text = if (VocabularyData.allLists.isEmpty()) "Keine Listen vorhanden" else "Wähle eine Liste"
             translationEditText.isEnabled = false
             checkButton.isEnabled = false
+            solutionButton.isEnabled = false // NEU: Auch Lösungs-Button deaktivieren
             currentVocabularyEntry = null
             return
         }
 
-        // NEU: Übersetzungsrichtung basierend auf der RadioGroup festlegen
         isGermanToEnglish = when (directionRadioGroup.checkedRadioButtonId) {
             R.id.radioGermanToEnglish -> true
             R.id.radioEnglishToGerman -> false
@@ -102,12 +115,10 @@ class MainActivity : AppCompatActivity() {
                 val wordToShow = entry.germanWords.random()
                 wordToTranslateTextView.text = "Deutsch: $wordToShow"
             } else {
-                // Sicherstellen, dass die englische Liste nicht leer ist
                 if (entry.englishWords.isNotEmpty()) {
                     val wordToShow = entry.englishWords.random()
                     wordToTranslateTextView.text = "Englisch: $wordToShow"
                 } else {
-                    // Fallback, falls ein Eintrag keine englischen Wörter hat
                     loadNewWord()
                     return@let
                 }
@@ -118,10 +129,10 @@ class MainActivity : AppCompatActivity() {
         resultTextView.text = ""
         translationEditText.isEnabled = true
         checkButton.isEnabled = true
+        solutionButton.isEnabled = true // NEU: Lösungs-Button aktivieren
     }
 
     private fun checkTranslation() {
-        // ... (deine bestehende checkTranslation Methode bleibt unverändert)
         val userAnswer = translationEditText.text.toString().trim()
         if (userAnswer.isEmpty()) {
             resultTextView.text = "Bitte gib eine Übersetzung ein."
@@ -133,12 +144,35 @@ class MainActivity : AppCompatActivity() {
 
             if (correctAnswers.any { it.equals(userAnswer, ignoreCase = true) }) {
                 resultTextView.text = "Richtig!"
-                loadNewWord()
+                // Mit einer kleinen Verzögerung ein neues Wort laden
+                Handler(Looper.getMainLooper()).postDelayed({
+                    loadNewWord()
+                }, 1000) // 1 Sekunde Verzögerung
             } else {
                 resultTextView.text = "Falsch. Richtige Antwort(en): $allPossibleCorrectAnswersFormatted"
             }
         } ?: run {
             resultTextView.text = "Bitte zuerst eine Liste auswählen."
+        }
+    }
+
+    // Angepasste Methode zum Anzeigen der Lösung
+    private fun showSolution() {
+        currentVocabularyEntry?.let { entry ->
+            val correctAnswers = if (isGermanToEnglish) entry.englishWords else entry.germanWords
+            val allPossibleCorrectAnswersFormatted = correctAnswers.joinToString(" / ")
+            resultTextView.text = "Lösung: $allPossibleCorrectAnswersFormatted"
+
+            // Deaktiviere die Buttons, um doppelte Klicks zu verhindern
+            checkButton.isEnabled = false
+            solutionButton.isEnabled = false
+
+            // Lade nach einer kurzen Verzögerung ein neues Wort
+            Handler(Looper.getMainLooper()).postDelayed({
+                loadNewWord()
+            }, 2000) // 2 Sekunden Verzögerung
+        } ?: run {
+            resultTextView.text = "Kein Wort geladen, um eine Lösung anzuzeigen."
         }
     }
 }

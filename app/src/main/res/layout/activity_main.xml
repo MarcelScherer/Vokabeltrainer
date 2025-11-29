@@ -27,7 +27,7 @@
         android:layout_marginBottom="30dp"
         android:minHeight="60dp" />
 
-    <!-- NEU: RadioGroup für die Übersetzungsrichtung -->
+    <!-- RadioGroup für die Übersetzungsrichtung -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,8 +65,6 @@
             android:text="EN → DE" />
     </RadioGroup>
 
-    <!-- ... Rest deiner Layout-Datei ... -->
-
     <TextView
         android:id="@+id/wordToTranslateTextView"
         android:layout_width="wrap_content"
@@ -84,13 +82,28 @@
         android:inputType="text"
         android:layout_marginBottom="8dp"/>
 
-    <Button
-        android:id="@+id/checkButton"
-        android:layout_width="wrap_content"
+    <!-- NEU: LinearLayout, um die Buttons nebeneinander zu platzieren -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="16dp"
-        android:text="Prüfen" />
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/checkButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prüfen"
+            android:layout_marginEnd="16dp"/> <!-- Fügt Abstand zwischen den Buttons hinzu -->
+
+        <Button
+            android:id="@+id/solutionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lösung" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/resultTextView"

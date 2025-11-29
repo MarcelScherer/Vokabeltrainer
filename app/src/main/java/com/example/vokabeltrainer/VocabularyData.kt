@@ -134,11 +134,8 @@ object VocabularyData {
         VocabularyEntry(germanWords = listOf("klein"), englishWords = listOf("small", "little")),
         VocabularyEntry(germanWords = listOf("groß"), englishWords = listOf("tall")),
         VocabularyEntry(germanWords = listOf("freundlich"), englishWords = listOf("friendly")),
-    )
-
-    val this_is_my_room = listOf(
         VocabularyEntry(germanWords = listOf("Problem", "Schwierigkeit"), englishWords = listOf("problem")),
-         VocabularyEntry(germanWords = listOf("das ist/sind", "es gibt"), englishWords = listOf("there is/are")),
+        VocabularyEntry(germanWords = listOf("das ist/sind", "es gibt"), englishWords = listOf("there is/are")),
         VocabularyEntry(germanWords = listOf("da", "dort", "dahin", "dorthin"), englishWords = listOf("there")),
         VocabularyEntry(germanWords = listOf("Garten"), englishWords = listOf("garden")),
         VocabularyEntry(germanWords = listOf("hinter"), englishWords = listOf("behind")),
@@ -206,13 +203,99 @@ object VocabularyData {
         VocabularyEntry(germanWords = listOf("Dachboden"), englishWords = listOf("loft")),
         VocabularyEntry(germanWords = listOf("eigen"), englishWords = listOf("own")),
     )
-    val combinedList = unit_1 + this_is_my_room +where_is_mir_fluff
+
+    val pick_up_B = listOf(
+        VocabularyEntry(germanWords = listOf("Tag"), englishWords = listOf("day")),
+        VocabularyEntry(germanWords = listOf("glücklich", "froh"), englishWords = listOf("happy")),
+        VocabularyEntry(germanWords = listOf("kann nicht"), englishWords = listOf("can't")),
+        VocabularyEntry(germanWords = listOf("treffen", "sich treffen"), englishWords = listOf("to meet")),
+        VocabularyEntry(germanWords = listOf("zeigen"), englishWords = listOf("to show")),
+        VocabularyEntry(germanWords = listOf("Spiel"), englishWords = listOf("game")),
+        VocabularyEntry(germanWords = listOf("wollen", "mögen"), englishWords = listOf("to want", "to")),
+        VocabularyEntry(germanWords = listOf("spielen"), englishWords = listOf("to play")),
+        VocabularyEntry(germanWords = listOf("langweilig"), englishWords = listOf("boring")),
+        VocabularyEntry(germanWords = listOf("Du magst doch Sport", "Du stehst doch auf Sport"), englishWords = listOf("You're into sports")),
+        VocabularyEntry(germanWords = listOf("Versuch es mal mit Inlineskating", "Probier es mal mit Inlineskating"), englishWords = listOf("Try skating")),
+        VocabularyEntry(germanWords = listOf("schnell"), englishWords = listOf("fast")),
+        VocabularyEntry(germanWords = listOf("Tut mir Leid"), englishWords = listOf("I'm sorry")),
+        VocabularyEntry(germanWords = listOf("Mir geht's gut"), englishWords = listOf("I'm fine")),
+        VocabularyEntry(germanWords = listOf("niedlich", "süß"), englishWords = listOf("cute")),
+        VocabularyEntry(germanWords = listOf("Glücksbringer", "Talisman"), englishWords = listOf("Lucky charm")),
+        VocabularyEntry(germanWords = listOf("so", "also"), englishWords = listOf("so")),
+    )
+    val hobbies = listOf(
+        VocabularyEntry(germanWords = listOf("Badminton spielen"), englishWords = listOf("play badminton")),
+        VocabularyEntry(germanWords = listOf("Basketball spielen"), englishWords = listOf("play basketball")),
+        VocabularyEntry(germanWords = listOf("Fußball spielen"), englishWords = listOf("play football")),
+        VocabularyEntry(germanWords = listOf("Volleyball spielen"), englishWords = listOf("play volleyball")),
+        VocabularyEntry(germanWords = listOf("Tennis spielen"), englishWords = listOf("play tennis")),
+        VocabularyEntry(germanWords = listOf("Handball spielen"), englishWords = listOf("play handball")),
+        VocabularyEntry(germanWords = listOf("Computer Spiele spielen"), englishWords = listOf("play (Computer) games")),
+        VocabularyEntry(germanWords = listOf("mit Tieren"), englishWords = listOf("with animals")),
+        VocabularyEntry(germanWords = listOf("zu Hause"), englishWords = listOf("at home")),
+        VocabularyEntry(germanWords = listOf("außerhalb"), englishWords = listOf("outside")),
+        VocabularyEntry(germanWords = listOf("bootfahren"), englishWords = listOf("go boating")),
+        VocabularyEntry(germanWords = listOf("Fahrradfahren"), englishWords = listOf("go cycling")),
+        VocabularyEntry(germanWords = listOf("inlineskates fahren"), englishWords = listOf("go inline skating")),
+        VocabularyEntry(germanWords = listOf("schwimmen gehen"), englishWords = listOf("go swimming")),
+        VocabularyEntry(germanWords = listOf("Pferde reiten"), englishWords = listOf("horse-riding")),
+        VocabularyEntry(germanWords = listOf("Skifahren"), englishWords = listOf("skiing")),
+        VocabularyEntry(germanWords = listOf("snowboardfahren"), englishWords = listOf("snowboarding")),
+        VocabularyEntry(germanWords = listOf("Musik machen"), englishWords = listOf("make music")),
+        VocabularyEntry(germanWords = listOf("Modelle machen"), englishWords = listOf("make models")),
+    )
+    val this_is_fun = listOf(
+        VocabularyEntry(germanWords = listOf("SMS", "Kurznachricht"), englishWords = listOf("text (message)")),
+        VocabularyEntry(germanWords = listOf("Lesen"), englishWords = listOf("reading")),
+        VocabularyEntry(germanWords = listOf("Musik"), englishWords = listOf("music")),
+        VocabularyEntry(germanWords = listOf("anmalen", "malen"), englishWords = listOf("to paint")),
+        VocabularyEntry(germanWords = listOf("Schwimmen gehen"), englishWords = listOf("to go swimming")),
+        VocabularyEntry(germanWords = listOf("Lesen"), englishWords = listOf("to read")),
+        VocabularyEntry(germanWords = listOf("Buch"), englishWords = listOf("book")),
+        VocabularyEntry(germanWords = listOf("fotografieren", "Fotos machen"), englishWords = listOf("to take photos")),
+        VocabularyEntry(germanWords = listOf("beobachten", "sich ansehen", "zuschauen"), englishWords = listOf("to watch")),
+        VocabularyEntry(germanWords = listOf("Karten", "Spielkarten"), englishWords = listOf("card")),
+        VocabularyEntry(germanWords = listOf("Zeitschrift"), englishWords = listOf("magazine")),
+        VocabularyEntry(germanWords = listOf("fernsehen"), englishWords = listOf("to watch TV")),
+        VocabularyEntry(germanWords = listOf("DVD"), englishWords = listOf("DVD")),
+        VocabularyEntry(germanWords = listOf("Ich auch"), englishWords = listOf("Me too")),
+        VocabularyEntry(germanWords = listOf("Fahrrad"), englishWords = listOf("bike")),
+    )
+    val Unit2_Im_new_at_TTS = listOf(
+        VocabularyEntry(germanWords = listOf("Regel"), englishWords = listOf("rule")),
+        VocabularyEntry(germanWords = listOf("Handbuch", "Kalender"), englishWords = listOf("planner")),
+        VocabularyEntry(germanWords = listOf("Mittagessen"), englishWords = listOf("lunch")),
+        VocabularyEntry(germanWords = listOf("Cafeteria"), englishWords = listOf("cafeteria")),
+        VocabularyEntry(germanWords = listOf("Geld"), englishWords = listOf("money")),
+        VocabularyEntry(germanWords = listOf("Automat", "Maschine", "Apparat", "Gerät"), englishWords = listOf("machine")),
+        VocabularyEntry(germanWords = listOf("bezahlen"), englishWords = listOf("to pay (for)")),
+        VocabularyEntry(germanWords = listOf("Finger"), englishWords = listOf("finger")),
+        VocabularyEntry(germanWords = listOf("Kunstunterricht"), englishWords = listOf("Art")),
+        VocabularyEntry(germanWords = listOf("kaufen"), englishWords = listOf("to buy")),
+        VocabularyEntry(germanWords = listOf("Süßigkeiten", "Bonbons"), englishWords = listOf("sweets")),
+        VocabularyEntry(germanWords = listOf("Geschäft", "Laden"), englishWords = listOf("shop")),
+        VocabularyEntry(germanWords = listOf("Füller"), englishWords = listOf("pen")),
+        VocabularyEntry(germanWords = listOf("Bleistift", "Buntstift"), englishWords = listOf("pencil")),
+        VocabularyEntry(germanWords = listOf("Federmappchen", "Mäppchen"), englishWords = listOf("pencil-case")),
+        VocabularyEntry(germanWords = listOf("Übungsheft"), englishWords = listOf("exercise book")),
+        VocabularyEntry(germanWords = listOf("Lineal"), englishWords = listOf("ruler")),
+        VocabularyEntry(germanWords = listOf("Radiergummi"), englishWords = listOf("rubber")),
+        VocabularyEntry(germanWords = listOf("Uniform"), englishWords = listOf("uniform")),
+        VocabularyEntry(germanWords = listOf("Aufnahmestudie", "Tonstudio"), englishWords = listOf("recording studio")),
+        VocabularyEntry(germanWords = listOf("Klassenlehrer-in"), englishWords = listOf("tutor")),
+        VocabularyEntry(germanWords = listOf("Klassenzimmer"), englishWords = listOf("classroom")),
+        VocabularyEntry(germanWords = listOf("Klassenkamerad-in", "Mitschüler-in"), englishWords = listOf("classmates"))
+    )
+    val combinedList = unit_1 + where_is_mir_fluff + pick_up_B + hobbies + this_is_fun + Unit2_Im_new_at_TTS
 
     val allLists: Map<String, List<VocabularyEntry>> = mapOf(
         "Wiederholung (alle Vokabeln)" to combinedList,
         "Unit 1 - call " to unit_1,
-        "This is my Room" to this_is_my_room,
-        "Where is Mir fluff?" to where_is_mir_fluff,
+        "Where is Mir. Fluff?" to where_is_mir_fluff,
+        "Pick up B" to pick_up_B,
+        "Hobbies" to hobbies,
+        "This is fun" to this_is_fun,
+        "Unit 2 - Im new at TTS" to Unit2_Im_new_at_TTS,
         // Füge hier weitere Listen hinzu"
         // Füge hier weitere Listen hinzu, z.B. "Liste 3: Verben" to listThree
     )
