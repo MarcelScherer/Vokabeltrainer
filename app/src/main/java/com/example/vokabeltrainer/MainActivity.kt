@@ -142,7 +142,18 @@ class MainActivity : AppCompatActivity() {
             val correctAnswers = if (isGermanToEnglish) entry.englishWords else entry.germanWords
             val allPossibleCorrectAnswersFormatted = correctAnswers.joinToString(" / ")
 
-            if (correctAnswers.any { it.equals(userAnswer, ignoreCase = true) }) {
+            if (correctAnswers.any { correctAnswer ->
+                val normalizedUser = userAnswer.lowercase()
+                val normalizedCorrect = correctAnswer.lowercase()
+
+                // Varianten prüfen:
+                // 1. Exakter Treffer (z.B. "listen (to)" == "listen (to)")
+                normalizedUser == normalizedCorrect ||
+                // 2. Ohne Klammern (z.B. "listen to" == "listen (to)".replace("(", "").replace(")", ""))
+                normalizedUser == normalizedCorrect.replace("(", "").replace(")", "").replace(Regex("\\s+"), " ").trim() ||
+                // 3. Inhalt in Klammern weglassen (z.B. "listen" == "listen (to)".replace(Regex("\\(.*?\\)"), ""))
+                normalizedUser == normalizedCorrect.replace(Regex("\\(.*?\\)"), " ").replace(Regex("\\s+"), " ").trim()
+            }) {
                 resultTextView.text = "Richtig!"
                 // Mit einer kleinen Verzögerung ein neues Wort laden
                 Handler(Looper.getMainLooper()).postDelayed({
